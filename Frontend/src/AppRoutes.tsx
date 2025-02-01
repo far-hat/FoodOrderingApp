@@ -1,17 +1,31 @@
 import { Routes,Route, Navigate } from "react-router-dom"
 
-import Layout from "./layouts/layout";
+import Layout from "./layouts/Layout";
 import HomePage from "./pages/HomePage";
 import AuthCallbackPage from "./pages/AuthCallbackPage";
+import UserProfilePage from "./pages/UserProfilePage";
+import ProtectedRoute from "./auth/ProtectedRoute";
 
 const AppRoute = ()=>{
     return(
         <Routes>
-            <Route path="/" element={<Layout><HomePage/></Layout>}
+            <Route path="/" element={<Layout showHero><HomePage/></Layout>}
             />
             <Route path="/auth-callback" element={<AuthCallbackPage/>}
             />
-            <Route path="/userProfile" element={<span>USER PROFILE PAGE</span>}/>
+
+            <Route element={<ProtectedRoute/>}>
+                <Route path="/user-profile" element=
+                {
+                    <Layout>
+                    <UserProfilePage/>
+                    </Layout>
+                }
+                />
+            </Route>
+
+
+            
             <Route path="*" element={<Navigate to="/" />}/>
         </Routes>
     );
