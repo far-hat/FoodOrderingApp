@@ -12,7 +12,7 @@ declare global{
         }
     }
 }
-debugger;
+
 export const jwtCheck = auth({
     
   audience: process.env.AUTH0_AUDIENCE,

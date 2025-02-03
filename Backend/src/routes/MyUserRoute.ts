@@ -9,8 +9,9 @@ router.get("/",jwtCheck,jwtParse,MyUserController.getCurrentUser);
 
 router.post("/",jwtCheck,MyUserController.createCurrentUser);
 
-console.log("in route file")
-debugger;
+
+
+
 router.put("/",jwtCheck,
                 jwtParse,
                 validateMyUserRequest,
