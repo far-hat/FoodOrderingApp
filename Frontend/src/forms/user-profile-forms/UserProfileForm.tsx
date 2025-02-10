@@ -47,7 +47,7 @@ const UserProfileForm = ( { onSave,isLoading, currentUser} : Props) => {
                     <h2 className="text-2xl font-bold">User Profile Form
                     </h2>
                     <FormDescription>
-                    View and change your profilee information here
+                    View and change your profile information here
                     </FormDescription>
                 </div>
                 <FormField control={form.control} name="email" render={ ( {field}) =>(
