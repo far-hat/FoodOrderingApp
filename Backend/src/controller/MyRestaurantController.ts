@@ -23,7 +23,7 @@ const createMyRestaurant = async (req : Request, res : Response)=>{
 
         const existingRestaurant = await Restaurant.find({user : req.userId});
 
-        if(existingRestaurant){
+        if(Array.isArray(existingRestaurant) && existingRestaurant.length > 0){
             res.status(409).json({message : "User Restaurant already exists"});
             return;
         }
