@@ -12,7 +12,7 @@ router.get("/search/:city",
     .withMessage("City parameter must be a valid string"),
     RestaurantController.searchRestaurant);
 
-router.get("/:restaurant",
+router.get("/:restaurantId",
     param("restaurantId")
     .isString()
     .trim()
